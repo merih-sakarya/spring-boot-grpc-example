@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc";
+option java_outer_classname = "ServerStreamingProto";
+
+package serverstreaming;
+
+// The Server Streaming service definition.
+service ServerStreamingService {
+  rpc ServerStreamingCall (ServerStreamingRequest) returns (stream ServerStreamingResponse);
+}
+
+// The request message containing the server streaming call message.
+message ServerStreamingRequest {
+  string message = 1;
+}
+
+// The response message containing the server streaming response.
+message ServerStreamingResponse {
+  string message = 1;
+}

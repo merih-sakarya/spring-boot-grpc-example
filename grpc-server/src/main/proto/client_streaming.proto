@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc";
+option java_outer_classname = "ClientStreamingProto";
+
+package clientstreaming;
+
+// The Client Streaming service definition.
+service ClientStreamingService {
+  rpc ClientStreamingCall (stream ClientStreamingRequest) returns (ClientStreamingResponse);
+}
+
+// The request message containing the client streaming call message.
+message ClientStreamingRequest {
+  string message = 1;
+}
+
+// The response message containing the client streaming response.
+message ClientStreamingResponse {
+  string message = 1;
+}

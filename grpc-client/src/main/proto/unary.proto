@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc";
+option java_outer_classname = "UnaryProto";
+
+package unary;
+
+// The Unary service definition.
+service UnaryService {
+  rpc UnaryCall (UnaryRequest) returns (UnaryResponse);
+}
+
+// The request message containing the unary call message.
+message UnaryRequest {
+  string message = 1;
+}
+
+// The response message containing the unary call response.
+message UnaryResponse {
+  string message = 1;
+}

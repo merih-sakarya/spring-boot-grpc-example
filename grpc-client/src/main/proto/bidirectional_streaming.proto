@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc";
+option java_outer_classname = "BidirectionalStreamingProto";
+
+package bidirectionalstreaming;
+
+// The Bidirectional Streaming service definition.
+service BidirectionalStreamingService {
+  rpc BidirectionalStreamingCall (stream BidirectionalStreamingRequest) returns (stream BidirectionalStreamingResponse);
+}
+
+// The request message containing the bidirectional streaming call message.
+message BidirectionalStreamingRequest {
+  string message = 1;
+}
+
+// The response message containing the bidirectional streaming response.
+message BidirectionalStreamingResponse {
+  string message = 1;
+}
